@@ -1,0 +1,20 @@
+baseurl = "https://mjmor.github.io/"
+title = "MJM"
+languageCode = "en-us"
+contentdir = "content"
+theme = "terminal"
+layoutdir = "layouts"
+publishdir = "public"
+buildDrafts = true
+relativeURLs = false
+canonifyURLs = false
+disqusShortname = "mjmor"
+
+[params]
+    description = "A personal site for blogging"
+    author = "Maxwell J. Morgan"
+
+[taxonomies]
+    tag = "tags"
+    categories = "categories"
+    series = "series"
