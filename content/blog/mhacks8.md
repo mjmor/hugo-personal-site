@@ -7,7 +7,7 @@ tags = [
 ]
 date = "2016-10-08T07:43:12-04:00"
 title = "mhacks8"
-postname = "36 hours at MHacks 8"
+postname = "36 Hours at MHacks 8"
 section = "blog"
 draft = false
 thumbnail = "/assets/mhacks8.jpg"
