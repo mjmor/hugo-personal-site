@@ -5,6 +5,7 @@ draft = false
 type = "contact"
 phone = "(586) 610-7410"
 github = "https://github.com/mjmor"
+twitter = "@maxjmorgan"
 linkedin = "https://linkedin.com/in/maxwelljmorgan"
 email = "mjmor@umich.edu"
 
