@@ -84,46 +84,45 @@ uses excryption):
 
 ```
 server {
-        listen       443 ssl http2;
-        listen       [::]:443 ssl http2;
-        server_name  maxwelljmorgan.net www.maxwelljmorgan.net;
-        root         /var/www/maxwelljmorgan.net/html/;
+    listen       443 ssl http2;
+    listen       [::]:443 ssl http2;
+    server_name  maxwelljmorgan.net www.maxwelljmorgan.net;
+    root         /var/www/maxwelljmorgan.net/html/;
 
-        access_log /var/www/maxwelljmorgan.net/log/access.log;
-        error_log /var/www/maxwelljmorgan.net/log/error.log;
+    access_log /var/www/maxwelljmorgan.net/log/access.log;
+    error_log /var/www/maxwelljmorgan.net/log/error.log;
 
-        add_header Strict-Transport-Security max-age=15768000;
+    add_header Strict-Transport-Security max-age=15768000;
 
-        ssl_certificate "/etc/letsencrypt/live/maxwelljmorgan.net/fullchain.pem";
-        ssl_certificate_key "/etc/letsencrypt/live/maxwelljmorgan.net/privkey.pem";
-        ssl_session_cache shared:SSL:50m;
-        ssl_stapling on;
-        ssl_stapling_verify on;
-        ssl_dhparam "/etc/ssl/certs/dhparam.pem";
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_session_timeout  1d;
-        ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:RSA+AESGCM:RSA+AES:!aNULL:!MD5:!DSS;
-        ssl_prefer_server_ciphers on;
+    ssl_certificate "/etc/letsencrypt/live/maxwelljmorgan.net/fullchain.pem";
+    ssl_certificate_key "/etc/letsencrypt/live/maxwelljmorgan.net/privkey.pem";
+    ssl_session_cache shared:SSL:50m;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    ssl_dhparam "/etc/ssl/certs/dhparam.pem";
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_session_timeout  1d;
+    ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:RSA+AESGCM:RSA+AES:!aNULL:!MD5:!DSS;
+    ssl_prefer_server_ciphers on;
 
-        location / {
-            try_files $uri $uri/index.html $uri.html =404;
-        }
-
-        location ~ /.well-known {
-                allow all;
-        }
-
-        error_page 404 /404.html;
-
-        error_page 500 502 503 504 /50x.html;
-            location = /50x.html {
-        }
+    location / {
+        try_files $uri $uri/index.html $uri.html =404;
     }
-    server {
-        listen 80;
-        server_name maxwelljmorgan.com www.maxwelljmorgan.com;
-        return 301 https://$host$request_uri;
+
+    location ~ /.well-known {
+            allow all;
     }
+
+    error_page 404 /404.html;
+
+    error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+    }
+}
+server {
+    listen 80;
+    server_name maxwelljmorgan.com www.maxwelljmorgan.com;
+    return 301 https://$host$request_uri;
 }
 ```
 
