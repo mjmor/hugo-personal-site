@@ -6,7 +6,7 @@ type = "contact"
 phone = "(586) 610-7410"
 github = "https://github.com/mjmor"
 linkedin = "https://linkedin.com/in/maxwelljmorgan"
-email = "mjmor@umich.edu"
+email = "maxwell.morgan.13@gmail.com"
 
 +++
 
